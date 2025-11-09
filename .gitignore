@@ -1,0 +1,48 @@
+# Arquivos de compilação e dependências
+*.class
+*.jar
+*.war
+*.pyc
+__pycache__/
+*.egg-info/
+dist/
+build/
+
+# Bancos de dados locais
+*.sqlite3
+*.db
+
+# Arquivos de configuração sensíveis
+*.env
+*.properties
+*.key
+*.pem
+
+# Logs
+*.log
+logs/
+
+# Arquivos de IDEs
+.idea/
+*.iml
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Dependências de pacotes
+node_modules/
+venv/
+env/
+.pip_cache/
+
+# Arquivos temporários
+*.tmp
+*.bak
+*.swp
+*~
+
+# Kafka e Docker (arquivos gerados localmente)
+kafka_*/
+zookeeper_*/
+*.pid
+*.lock
