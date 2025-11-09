@@ -21,19 +21,13 @@ A Spring Boot application providing a SOAP-based API for creating orders, with p
 
 ## Setup Instructions
 
-### 1. Clone the Repository
-```bash
-git clone <repository-url>
-cd ordersyncsoap
-```
-
-### 2. Configure Dependencies
+### 1. Configure Dependencies
 Ensure Maven resolves all dependencies in `pom.xml`:
 ```bash
 mvn clean install
 ```
 
-### 5. Run the Application
+### 2. Run the Application
 ```bash
 mvn spring-boot:run
 ```
