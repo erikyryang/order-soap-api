@@ -10,10 +10,9 @@ public class OrderConsumer {
 
     private final OrderService orderService;
 
-    @KafkaListener(topics = "order-created", groupId = "order-group")
+    @KafkaListener(topics = {"order-created"}, groupId = "order-group")
     public void listen(String message) {
         Long orderId = Long.valueOf(message);
-        System.out.println("Received event: " + message);
         orderService.updateStatus(orderId, "RECEIVED");
     }
 }

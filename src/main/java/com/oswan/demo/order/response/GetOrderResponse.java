@@ -1,4 +1,4 @@
-package com.oswan.demo.order;
+package com.oswan.demo.order.response;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
