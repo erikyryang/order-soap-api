@@ -16,7 +16,7 @@ A Spring Boot application providing a SOAP-based API for creating orders, with p
 - **Java 25** (or Java 21 as fallback)
 - **Maven 3.9+**
 - **PostgreSQL 14+** (running locally or via Docker)
-- **Kafka and ZooKeeper** (via Docker Compose)
+- **Kafka** (via Docker Compose)
 - **Postman** or SoapUI for testing SOAP requests
 
 ## Setup Instructions
