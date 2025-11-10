@@ -1,5 +1,5 @@
 <definitions name="OrderService"
-             targetNamespace="http://example.com/orders"
+             targetNamespace="  http://example.com/orders"
              xmlns:tns="http://example.com/orders"
              xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
              xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -8,19 +8,41 @@
         <part name="customerName" type="xs:string"/>
         <part name="totalAmount" type="xs:double"/>
     </message>
+    <message name="GetOrderRequest">
+        <part name="id" type="xs:long"/>
+    </message>
     <message name="CreateOrderResponse">
         <part name="orderId" type="xs:long"/>
+    </message>
+    <message name="GetOrderResponse">
+        <part name="id" type="xs:long"/>
+        <part name="customerName" type="xs:string"/>
+        <part name="totalAmount" type="xs:double"/>
+        <part name="status" type="xs:string"/>
     </message>
     <portType name="OrderPortType">
         <operation name="CreateOrder">
             <input message="tns:CreateOrderRequest"/>
             <output message="tns:CreateOrderResponse"/>
         </operation>
+        <operation name="GetOrder">
+            <input message="tns:GetOrderRequest"/>
+            <output message="tns:GetOrderResponse"/>
+        </operation>
     </portType>
     <binding name="OrderBinding" type="tns:OrderPortType">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
         <operation name="CreateOrder">
             <soap:operation soapAction="http://example.com/orders/CreateOrder"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="GetOrder">
+            <soap:operation soapAction="http://example.com/orders/GetOrder"/>
             <input>
                 <soap:body use="literal"/>
             </input>

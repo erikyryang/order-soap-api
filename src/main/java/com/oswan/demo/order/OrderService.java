@@ -1,6 +1,5 @@
 package com.oswan.demo.order;
 
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -23,6 +22,23 @@ public class OrderService {
         response.setOrderId(order.getId());
         return response;
     }
+
+    public GetOrderResponse findById(Long id){
+        Order order = orderRepository.findById(id).orElseThrow(() -> new RuntimeException("Order not found"));
+        return orderToResponse(order);
+
+    }
+
+    private GetOrderResponse orderToResponse(Order order){
+        GetOrderResponse orderResponse = new GetOrderResponse();
+        orderResponse.setId(order.getId());
+        orderResponse.setStatus(order.getStatus());
+        orderResponse.setTotalAmount(order.getTotalAmount());
+        orderResponse.setCustomerName(order.getCustomerName());
+        return orderResponse;
+    }
+
+
 
     @Transactional
     protected void updateStatus(Long id, String status){
